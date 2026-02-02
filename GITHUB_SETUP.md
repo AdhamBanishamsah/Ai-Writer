@@ -49,14 +49,23 @@ git push -u origin main
 
 ## 3. Enable GitHub Pages (for Privacy policy URL)
 
-1. On GitHub, open your repo **Ai-Writer**.
-2. Go to **Settings** → **Pages** (left sidebar).
-3. Under **Source**, choose **Deploy from a branch**.
-4. **Branch:** `main`, folder: **/docs**.
-5. Click **Save**.
-6. Wait 1–2 minutes. Your privacy policy will be at:
-   - **https://AdhamBanishamsah.github.io/Ai-Writer/**  
-   (Replace `AdhamBanishamsah` with your GitHub username; use lowercase in the URL if your username is lowercase.)
+You must turn on Pages in the repo settings; otherwise you’ll see “There isn’t a GitHub Pages site here.”
+
+1. Open your repo: **https://github.com/AdhamBanishamsah/Ai-Writer**
+2. Click **Settings** (tab at the top of the repo, not your profile settings).
+3. In the **left sidebar**, under “Code and automation”, click **Pages**.
+4. Under **“Build and deployment”**:
+   - **Source:** choose **“Deploy from a branch”** (not “GitHub Actions”).
+   - **Branch:** choose **`main`**.
+   - **Folder:** choose **“/ (root)”** (this uses the `index.html` at the repo root as the privacy policy page).
+   - Click **Save**.
+5. Wait 1–2 minutes. GitHub will show a message like: “Your site is live at **https://adhamanishamsah.github.io/Ai-Writer/**”.
+6. Open that URL in a new tab. You should see “Privacy Policy — Ai Writer”.
+
+**If it still says “There isn’t a GitHub Pages site here”:**  
+- Confirm you’re in **Settings → Pages** of the **Ai-Writer** repo.  
+- Confirm Source is **“Deploy from a branch”**, Branch is **main**, Folder is **/(root)**.  
+- Wait a few more minutes and hard-refresh the Pages URL (Ctrl+F5 or Cmd+Shift+R).
 
 ---
 
