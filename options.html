@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ai Writer - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Ai Writer Settings</h1>
+    </header>
+
+    <div class="content">
+      <div class="section">
+        <h2>API Configuration</h2>
+        <p class="description">
+          Configure your AI API settings. Your API key is stored locally and never shared.
+        </p>
+
+        <div class="form-group">
+          <label for="provider">AI Provider *</label>
+          <select id="provider" tabindex="0">
+            <option value="openai">OpenAI</option>
+            <option value="gemini">Google Gemini</option>
+          </select>
+          <p class="help-text">
+            Choose your AI provider. Settings will update based on your selection.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <div class="label-with-status">
+            <label for="api-key">API Key *</label>
+            <span class="api-key-status api-key-status--not-configured" id="api-key-status" aria-live="polite">Not configured</span>
+            <button type="button" class="link-btn" id="clear-api-key-btn" tabindex="0" aria-label="Clear API key and show as not configured" style="display: none;">Clear</button>
+          </div>
+          <div class="api-key-row">
+            <input 
+              type="password" 
+              id="api-key" 
+              placeholder="Enter your API key"
+              autocomplete="off"
+              tabindex="0"
+              aria-describedby="api-key-help"
+            />
+            <button 
+              type="button" 
+              class="btn btn-replace-key" 
+              id="replace-key-btn" 
+              tabindex="0" 
+              aria-label="Replace API key"
+              style="display: none;"
+            >
+              Replace
+            </button>
+          </div>
+          <p class="help-text" id="api-key-help">
+            Your OpenAI API key. Get one at 
+            <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com</a>
+          </p>
+        </div>
+
+        <p class="description">
+          <a href="api-guide.html" target="_blank" rel="noopener noreferrer" id="api-guide-link">How to create API keys (OpenAI &amp; Gemini) →</a>
+        </p>
+
+        <div class="form-group" id="endpoint-group">
+          <label for="api-endpoint">API Endpoint</label>
+          <input 
+            type="text" 
+            id="api-endpoint" 
+            placeholder="https://api.openai.com/v1/chat/completions"
+            tabindex="0"
+          />
+          <p class="help-text" id="endpoint-help">
+            OpenAI API endpoint. Leave as default for standard OpenAI.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="model">Model *</label>
+          <input 
+            type="text" 
+            id="model" 
+            placeholder="gpt-4o-mini"
+            tabindex="0"
+          />
+          <p class="help-text" id="model-help">
+            OpenAI model (e.g., gpt-4o-mini, gpt-4, gpt-3.5-turbo)
+          </p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="save-btn" tabindex="0">Save Settings</button>
+        <button class="btn btn-secondary" id="test-btn" tabindex="0">Test Connection</button>
+      </div>
+
+      <div class="status-message" id="status-message" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

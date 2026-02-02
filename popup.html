@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ai Writer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Ai Writer</h1>
+      <button class="settings-btn" id="settings-btn" aria-label="Open settings" tabindex="0">
+        ⚙️
+      </button>
+    </header>
+
+    <div class="content">
+      <div class="input-section">
+        <label for="input-text">Selected Text</label>
+        <textarea 
+          id="input-text" 
+          placeholder="Select text on the page, or paste text here..."
+          rows="6"
+          tabindex="0"
+        ></textarea>
+        <div class="char-count" id="char-count">0 characters</div>
+      </div>
+
+      <div class="mode-section">
+        <label for="mode-select">Mode</label>
+        <select id="mode-select" tabindex="0">
+          <option value="professional">Professional</option>
+          <option value="grammar">Fix grammar & spelling</option>
+          <option value="friendly">Make it friendly</option>
+          <option value="shorten">Shorten</option>
+          <option value="expand">Expand</option>
+          <option value="translate">Translate</option>
+        </select>
+      </div>
+
+      <button class="rewrite-btn" id="rewrite-btn" tabindex="0">
+        <span id="rewrite-text">Rewrite</span>
+        <span id="rewrite-spinner" class="spinner hidden"></span>
+      </button>
+
+      <div class="output-section" id="output-section" style="display: none;">
+        <label for="output-text">Result</label>
+        <textarea 
+          id="output-text" 
+          readonly
+          rows="6"
+          tabindex="0"
+        ></textarea>
+        <div class="output-actions">
+          <button class="action-btn copy-btn" id="copy-btn" tabindex="0">Copy</button>
+          <button class="action-btn replace-btn" id="replace-btn" tabindex="0" style="display: none;">Replace</button>
+          <button class="action-btn swap-btn" id="swap-btn" tabindex="0">Swap</button>
+        </div>
+      </div>
+
+      <div class="error-message" id="error-message" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
